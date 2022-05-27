@@ -1,0 +1,20 @@
+{
+  "name": "observerpatternfyp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Interface.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graemeajones/observerPatternFYP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/graemeajones/observerPatternFYP/issues"
+  },
+  "homepage": "https://github.com/graemeajones/observerPatternFYP#readme"
+}
