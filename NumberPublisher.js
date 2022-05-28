@@ -6,6 +6,7 @@ export default class NumberPublisher {
 
   subscribers = [];
   halt = false;
+  number = undefined;
 
   constructor(name) {
     this.name = name;
@@ -21,17 +22,19 @@ export default class NumberPublisher {
   }
 
   run = () => {
-    const number = this.generateNumber(0,100);
+    this.number = this.generateNumber(0,100);
     const interval = this.generateNumber(200, 1300);
-    this.deliverToSubscribers(number);
+    this.alertSubscribers(this.number);
     if (!this.halt) {
       setTimeout(() => this.run(), interval);
     }
   }
 
-  stop = () => this.halt = true;
-  
   generateNumber = (start,range) => Math.round(start + range*Math.random());
 
-  deliverToSubscribers = (number) => this.subscribers.forEach(subscriber => subscriber.alert(number));
+  alertSubscribers = (number) => this.subscribers.forEach(subscriber => subscriber.alert(number));
+
+  stop = () => this.halt = true;
+  
+  getNumber = () => this.number;
 }
